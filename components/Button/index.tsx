@@ -4,11 +4,12 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Colors } from "@/constants/Colors";
 import styles from "./styles";
 import { ThemedText } from "../ThemedText";
+import { ChevronLeft } from "lucide-react-native";
 
 export type ButtonProps = {
-  rounded?: "default" | "lg";
-  variant?: "default" | "outline" | "gradient" | "nude";
-  title: string;
+  rounded?: "default" | "lg" | "sm";
+  variant?: "default" | "outline" | "gradient" | "nude" | "back";
+  title?: string;
   onPress?: () => void;
   isLoading?: boolean;
 };
@@ -20,6 +21,15 @@ const Button = ({
   isLoading,
   variant,
 }: ButtonProps) => {
+  if (variant === "back") {
+    return (
+      <Pressable onPress={onPress} disabled={isLoading}>
+        <View style={[styles.containerBack, styles.roundedBack]}>
+          <ChevronLeft color={Colors.light.white} size={30} />
+        </View>
+      </Pressable>
+    );
+  }
   if (variant === "gradient") {
     return (
       <Pressable onPress={onPress} disabled={isLoading}>
@@ -35,6 +45,7 @@ const Button = ({
           <View style={styles.container}>
             <ThemedText
               type="defaultSemiBold"
+              style={{ fontWeight: "600" }}
               lightColor="white"
               darkColor="white"
             >
@@ -57,6 +68,7 @@ const Button = ({
         >
           <ThemedText
             type="defaultSemiBold"
+            style={{ fontWeight: "600" }}
             lightColor={Colors.light.blue}
             darkColor={Colors.light.blue}
           >
@@ -77,6 +89,7 @@ const Button = ({
         >
           <ThemedText
             type="defaultSemiBold"
+            style={{ fontWeight: "600" }}
             lightColor={Colors.light.blue}
             darkColor={Colors.light.blue}
           >
@@ -95,7 +108,12 @@ const Button = ({
           rounded === "lg" ? styles.roundedLarge : styles.roundedDefault,
         ]}
       >
-        <ThemedText type="defaultSemiBold" lightColor="white" darkColor="white">
+        <ThemedText
+          type="defaultSemiBold"
+          style={{ fontWeight: "600" }}
+          lightColor="white"
+          darkColor="white"
+        >
           {title}
         </ThemedText>
       </View>

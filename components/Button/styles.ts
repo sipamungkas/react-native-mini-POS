@@ -1,3 +1,4 @@
+import { Colors } from "@/constants/Colors";
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
@@ -15,4 +16,10 @@ export default StyleSheet.create({
   },
   roundedLarge: { borderRadius: 16 },
   roundedDefault: { borderRadius: 5 },
+  roundedBack: { borderRadius: 8 },
+  containerBack: {
+    paddingHorizontal: 4,
+    paddingVertical: 2,
+    backgroundColor: Colors.light.blue,
+  },
 });
