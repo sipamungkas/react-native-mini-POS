@@ -17,12 +17,12 @@ export const Colors = {
     // design system colors
     background: "#F7F8FA",
     blue: "#1A72DD",
-    navy: "2A3256",
-    grey: "D1D1D1",
-    greyDark: "BDBDBD",
-    gradientBlueStart: "1A72DD",
-    gradientBlueEnd: "0D62CA",
-    red: "F4261A",
+    navy: "#2A3256",
+    grey: "#D1D1D1",
+    greyDark: "#BDBDBD",
+    gradientBlueStart: "#1A72DD",
+    gradientBlueEnd: "#0D62CA",
+    red: "#F4261A",
   },
   dark: {
     text: "#ECEDEE",
@@ -31,5 +31,13 @@ export const Colors = {
     icon: "#9BA1A6",
     tabIconDefault: "#9BA1A6",
     tabIconSelected: tintColorDark,
+    // design system colors
+    blue: "#1A72DD",
+    navy: "#2A3256",
+    grey: "#D1D1D1",
+    greyDark: "#BDBDBD",
+    gradientBlueStart: "#1A72DD",
+    gradientBlueEnd: "#0D62CA",
+    red: "#F4261A",
   },
 };
