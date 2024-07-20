@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "@/components/Button";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
+import { router } from "expo-router";
 
 const WelcomeScreen = () => {
   return (
@@ -34,8 +35,19 @@ const WelcomeScreen = () => {
           Easy Management for your Store.
         </ThemedText>
         <View style={{ paddingHorizontal: 24, gap: 20 }}>
-          <Button title="Login" rounded="lg" />
-          <Button variant="outline" title="Offline Mode" rounded="lg" />
+          <Button
+            onPress={() => {
+              router.push("/auth/register/index");
+            }}
+            title="Create new account"
+            rounded="lg"
+          />
+          <Button
+            variant="outline"
+            title="Log In"
+            rounded="lg"
+            onPress={() => router.push("/auth")}
+          />
         </View>
       </View>
     </SafeAreaView>
