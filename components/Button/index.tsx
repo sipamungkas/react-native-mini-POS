@@ -6,8 +6,8 @@ import styles from "./styles";
 import { ThemedText } from "../ThemedText";
 
 export type ButtonProps = {
-  rounded?: "default" | "large";
-  variant?: "default" | "outline" | "gradient";
+  rounded?: "default" | "lg";
+  variant?: "default" | "outline" | "gradient" | "nude";
   title: string;
   onPress?: () => void;
   isLoading?: boolean;
@@ -30,9 +30,7 @@ const Button = ({
           ]}
           start={[0.2, 0.4]}
           end={[1, 1]}
-          style={
-            rounded === "large" ? styles.roundedLarge : styles.roundedDefault
-          }
+          style={rounded === "lg" ? styles.roundedLarge : styles.roundedDefault}
         >
           <View style={styles.container}>
             <ThemedText
@@ -54,7 +52,27 @@ const Button = ({
           style={[
             styles.container,
             { borderColor: Colors.light.blue, borderWidth: 1 },
-            rounded === "large" ? styles.roundedLarge : styles.roundedDefault,
+            rounded === "lg" ? styles.roundedLarge : styles.roundedDefault,
+          ]}
+        >
+          <ThemedText
+            type="defaultSemiBold"
+            lightColor={Colors.light.blue}
+            darkColor={Colors.light.blue}
+          >
+            {title}
+          </ThemedText>
+        </View>
+      </Pressable>
+    );
+  }
+  if (variant === "nude") {
+    return (
+      <Pressable onPress={onPress} disabled={isLoading}>
+        <View
+          style={[
+            styles.container,
+            rounded === "lg" ? styles.roundedLarge : styles.roundedDefault,
           ]}
         >
           <ThemedText
@@ -74,7 +92,7 @@ const Button = ({
         style={[
           styles.container,
           { backgroundColor: Colors.light.blue },
-          rounded === "large" ? styles.roundedLarge : styles.roundedDefault,
+          rounded === "lg" ? styles.roundedLarge : styles.roundedDefault,
         ]}
       >
         <ThemedText type="defaultSemiBold" lightColor="white" darkColor="white">

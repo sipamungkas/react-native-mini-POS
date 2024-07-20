@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 18,
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
@@ -13,6 +13,6 @@ export default StyleSheet.create({
     fontWeight: "bold",
     fontFamily: "RubikRegular",
   },
-  roundedLarge: {},
+  roundedLarge: { borderRadius: 16 },
   roundedDefault: { borderRadius: 5 },
 });
