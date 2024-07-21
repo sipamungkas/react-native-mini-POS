@@ -37,7 +37,7 @@ const WelcomeScreen = () => {
         <View style={{ paddingHorizontal: 24, gap: 20 }}>
           <Button
             onPress={() => {
-              router.push("/auth/register/index");
+              router.push("/auth/register");
             }}
             title="Create new account"
             rounded="lg"
