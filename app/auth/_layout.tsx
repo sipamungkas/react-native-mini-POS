@@ -31,11 +31,11 @@ const AuthLayout = () => {
       <Stack.Screen name="index" options={{ title: "Log In" }} />
       <Stack.Screen
         name="employee-login/index"
-        options={{ title: "Login as Employee" }}
+        options={{ title: "Log in as Employee" }}
       />
       <Stack.Screen
         name="owner-login/index"
-        options={{ title: "Login as Owner" }}
+        options={{ title: "Log in as Owner" }}
       />
       <Stack.Screen name="register/index" options={{ title: "Register" }} />
     </Stack>
