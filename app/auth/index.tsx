@@ -1,14 +1,21 @@
-import { View, Text, Image, useWindowDimensions } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  useWindowDimensions,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import { Link, router } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import Button from "@/components/Button";
 import { Colors } from "@/constants/Colors";
+import { UserRound, UsersRound } from "lucide-react-native";
 
 const RolesLoginScreen = () => {
   const dimensions = useWindowDimensions();
   return (
-    <View>
+    <ScrollView>
       <ThemedText
         type="title"
         style={{ fontSize: 24, color: Colors.light.navy, marginBottom: 12 }}
@@ -32,11 +39,24 @@ const RolesLoginScreen = () => {
         />
       </View>
       <View style={{ gap: 12 }}>
-        <Button variant="gradient" rounded="lg" title="Login as Owner" />
+        <Button
+          variant="gradient"
+          rounded="lg"
+          title="Login as Owner"
+          onPress={() => router.push("/auth/owner-login")}
+          Icon={<UserRound color="white" />}
+        />
         <ThemedText style={{ textAlign: "center", color: Colors.light.navy }}>
           Or
         </ThemedText>
-        <Button variant="gradient" rounded="lg" title="Login as Employee" />
+        <Button
+          variant="gradient"
+          rounded="lg"
+          title="Login as Employee"
+          onPress={() => router.push("/auth/employee-login")}
+          Icon={<UsersRound color="white" />}
+        />
+
         <View
           style={{
             flexDirection: "row",
@@ -70,7 +90,7 @@ const RolesLoginScreen = () => {
           </ThemedText>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

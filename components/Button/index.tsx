@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Colors } from "@/constants/Colors";
 import styles from "./styles";
 import { ThemedText } from "../ThemedText";
-import { ChevronLeft } from "lucide-react-native";
+import { ChevronLeft, LucideIcon, UserRound } from "lucide-react-native";
 
 export type ButtonProps = {
   rounded?: "default" | "lg" | "sm";
@@ -12,6 +12,7 @@ export type ButtonProps = {
   title?: string;
   onPress?: () => void;
   isLoading?: boolean;
+  Icon?: React.ReactNode;
 };
 
 const Button = ({
@@ -20,6 +21,7 @@ const Button = ({
   title,
   isLoading,
   variant,
+  Icon,
 }: ButtonProps) => {
   if (variant === "back") {
     return (
@@ -42,10 +44,19 @@ const Button = ({
           end={[1, 1]}
           style={rounded === "lg" ? styles.roundedLarge : styles.roundedDefault}
         >
-          <View style={styles.container}>
+          <View
+            style={[
+              styles.container,
+              !!Icon && { flexDirection: "row", justifyContent: "flex-start" },
+            ]}
+          >
+            {Icon}
             <ThemedText
               type="defaultSemiBold"
-              style={{ fontWeight: "600" }}
+              style={[
+                { fontWeight: "700" },
+                !!Icon && { textAlign: "center", flex: 1 },
+              ]}
               lightColor="white"
               darkColor="white"
             >
@@ -66,14 +77,24 @@ const Button = ({
             rounded === "lg" ? styles.roundedLarge : styles.roundedDefault,
           ]}
         >
-          <ThemedText
-            type="defaultSemiBold"
-            style={{ fontWeight: "600" }}
-            lightColor={Colors.light.blue}
-            darkColor={Colors.light.blue}
+          <View
+            style={[
+              !!Icon && { flexDirection: "row", justifyContent: "flex-start" },
+            ]}
           >
-            {title}
-          </ThemedText>
+            {Icon}
+            <ThemedText
+              type="defaultSemiBold"
+              style={[
+                { fontWeight: "700" },
+                !!Icon && { textAlign: "center", flex: 1 },
+              ]}
+              lightColor={Colors.light.blue}
+              darkColor={Colors.light.blue}
+            >
+              {title}
+            </ThemedText>
+          </View>
         </View>
       </Pressable>
     );
@@ -108,14 +129,24 @@ const Button = ({
           rounded === "lg" ? styles.roundedLarge : styles.roundedDefault,
         ]}
       >
-        <ThemedText
-          type="defaultSemiBold"
-          style={{ fontWeight: "600" }}
-          lightColor="white"
-          darkColor="white"
+        <View
+          style={[
+            !!Icon && { flexDirection: "row", justifyContent: "flex-start" },
+          ]}
         >
-          {title}
-        </ThemedText>
+          {Icon}
+          <ThemedText
+            type="defaultSemiBold"
+            style={[
+              { fontWeight: "700" },
+              !!Icon && { textAlign: "center", flex: 1 },
+            ]}
+            lightColor={Colors.light.white}
+            darkColor={Colors.light.white}
+          >
+            {title}
+          </ThemedText>
+        </View>
       </View>
     </Pressable>
   );
