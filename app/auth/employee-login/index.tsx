@@ -28,7 +28,7 @@ const EmployeeLoginScreen = () => {
       >
         <ThemedText type="defaultSemiBold" style={{ textAlign: "justify" }}>
           Use the cashier code that can be created by the Owner in{" "}
-          <ThemedText style={{ fontWeight: "700" }}>
+          <ThemedText style={{ fontWeight: "bold" }}>
             {" "}
             Manage Store {"->"} Cashier Code
           </ThemedText>
