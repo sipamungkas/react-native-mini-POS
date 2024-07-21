@@ -23,6 +23,7 @@ export const Colors = {
     gradientBlueStart: "#1A72DD",
     gradientBlueEnd: "#0D62CA",
     red: "#F4261A",
+    lightBlue: "#1A72DD1A",
   },
   dark: {
     text: "#ECEDEE",
