@@ -35,12 +35,13 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Stack screenOptions={{ headerShown: false }}>
+        <Stack screenOptions={{ headerShown: false, statusBarStyle: "dark" }}>
+          <Stack.Screen name="(welcome)/index" />
+          <Stack.Screen name="home/(tabs)" />
           <Stack.Screen
-            name="(welcome)/index"
-            options={{ headerShown: false }}
+            name="home/transactions/index"
+            options={{ headerShown: true, title: "Transactions" }}
           />
-          <Stack.Screen name="home/(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
         </Stack>
       </ThemeProvider>

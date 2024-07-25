@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const MenuScreen = () => {
+const DummyPage = () => {
   return (
     <View>
-      <Text>MenuScreen</Text>
+      <Text>DummyPage</Text>
     </View>
   );
 };
 
-export default MenuScreen;
+export default DummyPage;

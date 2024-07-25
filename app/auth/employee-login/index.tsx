@@ -4,6 +4,7 @@ import Input from "@/components/Input";
 import Button from "@/components/Button";
 import { Colors } from "@/constants/Colors";
 import { ThemedText } from "@/components/ThemedText";
+import { router } from "expo-router";
 
 const EmployeeLoginScreen = () => {
   return (
@@ -16,7 +17,12 @@ const EmployeeLoginScreen = () => {
           variant="secure"
         />
       </View>
-      <Button title="Login" variant="gradient" rounded="lg" />
+      <Button
+        title="Login"
+        variant="gradient"
+        rounded="lg"
+        onPress={() => router.push("home")}
+      />
       <View
         style={{
           marginTop: 40,
